@@ -21,6 +21,12 @@ Você pode saber mais **[clicando aqui](https://goomer.com.br)**.
 - Abstraction of all API methods (Abstração de todos os métodos da API)
 - Composer ready and PSR-2 compliant (Pronto para o composer e compatível com PSR-2)
 
+### Melhoras possiveis
+
+- Utilização de token para segurança em alterar, incluir, e excluir dados.
+- Upload da imagem via api.
+- Categorias de restaurantes e de produtos.
+
 ## Installation
 
 Uploader is available via Composer:
@@ -39,7 +45,7 @@ composer require wagnermontanini/goomerapi
 
 ###### For details on how to use, see a sample folder in the component directory. In it you will have an example of use for each class. It works like this:
 
-Para mais detalhes sobre como usar, veja uma pasta de exemplo no diretório do componente. Nela terá um arquivo json para importação no postman com as rotas utilizadas. Ela funciona assim:
+Para mais detalhes sobre como usar, veja uma pasta de exemplo no diretório do componente. Nela terá um arquivo json para importação no postman com as rotas utilizadas e exemplos usando cURL. Ela funciona assim:
 
 #### apache
 
