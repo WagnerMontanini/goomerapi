@@ -1,0 +1,814 @@
+{
+	"info": {
+		"_postman_id": "b01b5caa-0fc9-4ecf-8642-383e8fefc577",
+		"name": "GoomerApi",
+		"description": "Criar uma API RESTful capaz de gerenciar os restaurantes e os produtos do seu cardápio.",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Restaurantes",
+			"item": [
+				{
+					"name": "Listar todos os restaurantes",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://{{url}}/{{versão}}",
+							"protocol": "https",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"{{versão}}"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Exemplo para listar todos os restaurantes",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "https://{{url}}/{{versão}}",
+									"protocol": "https",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"{{versão}}"
+									]
+								}
+							},
+							"_postman_previewlanguage": "json",
+							"header": null,
+							"cookie": [],
+							"body": "{\r\n    \"results\": 1,\r\n    \"page\": 1,\r\n    \"pages\": 1,\r\n    \"restaurants\": [\r\n        {\r\n            \"id\": \"1\",\r\n            \"name\": \"Goomer\",\r\n            \"image\": \"image/img.jpg\",\r\n            \"address\": \"Rua Sorocaba, 000, Sorocaba-SP\",\r\n            \"is_active\": \"1\",\r\n            \"is_accepted\": \"1\",\r\n            \"is_schedulable\": \"1\",\r\n            \"schedule_data\": \"{\\\"wednesday\\\":[{\\\"open\\\" :\\\"21:20\\\",\\\"close\\\" :\\\"23:48\\\"}]}\",\r\n            \"created_at\": \"2021-03-18 23:52:10\",\r\n            \"updated_at\": \"2021-03-18 23:52:10\"\r\n        }\r\n    ]\r\n}"
+						}
+					]
+				},
+				{
+					"name": "Cadastrar novos restaurantes",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "name",
+									"value": "Goomer",
+									"description": "Nome do restaurante",
+									"type": "text"
+								},
+								{
+									"key": "image",
+									"value": "image/img.jpg",
+									"description": "Imagem do restaurante",
+									"type": "text"
+								},
+								{
+									"key": "address",
+									"value": "Rua Sorocaba, 000, Sorocaba-SP",
+									"description": "Endereço completo",
+									"type": "text"
+								},
+								{
+									"key": "is_active",
+									"value": "1",
+									"description": "Restaurante ativo",
+									"type": "text"
+								},
+								{
+									"key": "is_accepted",
+									"value": "1",
+									"description": "Está atendendo",
+									"type": "text"
+								},
+								{
+									"key": "is_schedulable",
+									"value": "1",
+									"description": "Horário automático",
+									"type": "text"
+								},
+								{
+									"key": "schedule_data",
+									"value": "{\"wednesday\":[{\"open\" :\"21:20\",\"close\" :\"23:48\"}]}",
+									"description": "Horários de Funcionamento",
+									"type": "text"
+								}
+							],
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://{{url}}/{{versão}}",
+							"protocol": "https",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"{{versão}}"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Exemplo para cadastrar novos restaurantes",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "name",
+											"value": "Goomer",
+											"description": "Nome do restaurante",
+											"type": "text"
+										},
+										{
+											"key": "image",
+											"value": "image/img.jpg",
+											"description": "Imagem do restaurante",
+											"type": "text"
+										},
+										{
+											"key": "address",
+											"value": "Rua Sorocaba, 000, Sorocaba-SP",
+											"description": "Endereço completo",
+											"type": "text"
+										},
+										{
+											"key": "is_active",
+											"value": "1",
+											"description": "Restaurante ativo",
+											"type": "text"
+										},
+										{
+											"key": "is_accepted",
+											"value": "1",
+											"description": "Está atendendo",
+											"type": "text"
+										},
+										{
+											"key": "is_schedulable",
+											"value": "1",
+											"description": "Horário automático",
+											"type": "text"
+										},
+										{
+											"key": "schedule_data",
+											"value": "{\"wednesday\":[{\"open\" :\"21:20\",\"close\" :\"23:48\"}]}",
+											"description": "Horários de Funcionamento",
+											"type": "text"
+										}
+									],
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "https://{{url}}/{{versão}}",
+									"protocol": "https",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"{{versão}}"
+									]
+								}
+							},
+							"_postman_previewlanguage": "json",
+							"header": null,
+							"cookie": [],
+							"body": "{\r\n    \"restaurant\": {\r\n        \"id\": \"6\",\r\n        \"name\": \"Goomer\",\r\n        \"image\": \"image/img.jpg\",\r\n        \"address\": \"Rua Sorocaba, 000, Sorocaba-SP\",\r\n        \"is_active\": \"1\",\r\n        \"is_accepted\": \"1\",\r\n        \"is_schedulable\": \"1\",\r\n        \"schedule_data\": \"{\\\"wednesday\\\":[{\\\"open\\\" :\\\"21:20\\\",\\\"close\\\" :\\\"23:48\\\"}]}\",\r\n        \"created_at\": \"2021-03-18 23:52:10\",\r\n        \"updated_at\": \"2021-03-18 23:52:10\"\r\n    }\r\n}"
+						}
+					]
+				},
+				{
+					"name": "Listar os dados de um restaurante",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://{{url}}/{{versão}}/{{restaurant_id}}",
+							"protocol": "https",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"{{versão}}",
+								"{{restaurant_id}}"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Exemplo de listar os dados de um restaurante",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "https://{{url}}/{{versão}}/{{restaurant_id}}",
+									"protocol": "https",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"{{versão}}",
+										"{{restaurant_id}}"
+									]
+								}
+							},
+							"_postman_previewlanguage": "json",
+							"header": null,
+							"cookie": [],
+							"body": "{\r\n    \"restaurant\": {\r\n        \"id\": \"1\",\r\n        \"name\": \"Goomer\",\r\n        \"image\": \"image/img.jpg\",\r\n        \"address\": \"Rua Sorocaba, 000, Sorocaba-SP\",\r\n        \"is_active\": \"1\",\r\n        \"is_accepted\": \"1\",\r\n        \"is_schedulable\": \"1\",\r\n        \"schedule_data\": \"{\\\"wednesday\\\":[{\\\"open\\\" :\\\"21:20\\\",\\\"close\\\" :\\\"23:48\\\"}]}\",\r\n        \"created_at\": \"2021-03-18 23:52:10\",\r\n        \"updated_at\": \"2021-03-18 23:52:10\"\r\n    }\r\n}"
+						}
+					]
+				},
+				{
+					"name": "Alterar os dados um restaurante",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "name",
+									"value": "Goomer",
+									"description": "Nome do restaurante",
+									"type": "text"
+								},
+								{
+									"key": "address",
+									"value": "Rua Sorocaba, 000, Sorocaba,São Paulo",
+									"description": "Endereço completo",
+									"type": "text"
+								},
+								{
+									"key": "image",
+									"value": "imagem/img.jpg",
+									"description": "Imagem do restaurante",
+									"type": "text"
+								},
+								{
+									"key": "is_active",
+									"value": "1",
+									"description": "Restaurante ativo",
+									"type": "text"
+								},
+								{
+									"key": "is_accepted",
+									"value": "0",
+									"description": "Está atendendo",
+									"type": "text"
+								},
+								{
+									"key": "is_schedulable",
+									"value": "1",
+									"description": "Horário automático",
+									"type": "text"
+								},
+								{
+									"key": "schedule_data",
+									"value": "{\"wednesday\":[{\"open\" :\"19:00\",\"close\" :\"23:59\"}]}",
+									"description": "Horários de Funcionamento",
+									"type": "text"
+								}
+							],
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://{{url}}/{{versão}}/{{restaurant_id}}",
+							"protocol": "https",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"{{versão}}",
+								"{{restaurant_id}}"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Exemplo de alterar os dados um restaurante",
+							"originalRequest": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"key": "name",
+											"value": "Goomer",
+											"description": "Nome do restaurante",
+											"type": "text"
+										},
+										{
+											"key": "address",
+											"value": "Rua Sorocaba, 000, Sorocaba,São Paulo",
+											"description": "Endereço completo",
+											"type": "text"
+										},
+										{
+											"key": "image",
+											"value": "imagem/img.jpg",
+											"description": "Imagem do restaurante",
+											"type": "text"
+										},
+										{
+											"key": "is_active",
+											"value": "1",
+											"description": "Restaurante ativo",
+											"type": "text"
+										},
+										{
+											"key": "is_accepted",
+											"value": "0",
+											"description": "Está atendendo",
+											"type": "text"
+										},
+										{
+											"key": "is_schedulable",
+											"value": "1",
+											"description": "Horário automático",
+											"type": "text"
+										},
+										{
+											"key": "schedule_data",
+											"value": "{\"wednesday\":[{\"open\" :\"19:00\",\"close\" :\"23:59\"}]}",
+											"description": "Horários de Funcionamento",
+											"type": "text"
+										}
+									],
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "https://{{url}}/{{versão}}/{{restaurant_id}}",
+									"protocol": "https",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"{{versão}}",
+										"{{restaurant_id}}"
+									]
+								}
+							},
+							"_postman_previewlanguage": "json",
+							"header": null,
+							"cookie": [],
+							"body": "{\n    \"restaurant\": {\n        \"id\": \"1\",\n        \"name\": \"Goomer\",\n        \"image\": \"imagem/img.jpg\",\n        \"address\": \"Rua Sorocaba, 000, Sorocaba,São Paulo\",\n        \"is_active\": \"1\",\n        \"is_accepted\": \"1\",\n        \"is_schedulable\": \"1\",\n        \"schedule_data\": \"{\\\"wednesday\\\":[{\\\"open\\\" :\\\"19:00\\\",\\\"close\\\" :\\\"23:59\\\"}]}\",\n        \"created_at\": \"2021-03-18 23:52:10\",\n        \"updated_at\": \"2021-03-19 00:06:03\"\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "Excluir um restaurante",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "https://{{url}}/{{versão}}/{{restaurant_id}}",
+							"protocol": "https",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"{{versão}}",
+								"{{restaurant_id}}"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Exemplo para excluir um restaurante",
+							"originalRequest": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "https://{{url}}/{{versão}}/{{restaurant_id}}",
+									"protocol": "https",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"{{versão}}",
+										"{{restaurant_id}}"
+									]
+								}
+							},
+							"_postman_previewlanguage": "json",
+							"header": null,
+							"cookie": [],
+							"body": "{\r\n    \"accepted\": {\r\n        \"type\": \"success\",\r\n        \"message\": \"O restaurante foi excluído com sucesso\"\r\n    }\r\n}"
+						}
+					]
+				}
+			],
+			"description": "Rotas para os restaurantes"
+		},
+		{
+			"name": "Produtos",
+			"item": [
+				{
+					"name": "Listar todos os produtos de um restautante",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://{{url}}/{{versão}}/{{restaurant_id}}/",
+							"protocol": "https",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"{{versão}}",
+								"{{restaurant_id}}",
+								""
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Exemplo para listar todos os produtos de um restautante",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "https://{{url}}/{{versão}}/{{restaurant_id}}/",
+									"protocol": "https",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"{{versão}}",
+										"{{restaurant_id}}",
+										""
+									]
+								}
+							},
+							"_postman_previewlanguage": "json",
+							"header": null,
+							"cookie": [],
+							"body": "{\n    \"results\": 1,\n    \"page\": 1,\n    \"pages\": 1,\n    \"products\": [\n        {\n            \"id\": \"1\",\n            \"restaurant_id\": \"1\",\n            \"name\": \"Produto Goomer\",\n            \"image\": \"image/img.jpg\",\n            \"description\": \"Teste de criação de produtos\",\n            \"price\": \"20.50\",\n            \"old_price\": \"0.00\",\n            \"created_at\": \"2021-03-19 00:15:43\",\n            \"updated_at\": \"2021-03-19 00:15:43\"\n        }\n    ]\n}"
+						}
+					]
+				},
+				{
+					"name": "Criar um produto de um restaurante",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "name",
+									"value": "Produto Goomer",
+									"description": "Nome do produto",
+									"type": "text"
+								},
+								{
+									"key": "price",
+									"value": "20.5",
+									"description": "Valor do produto",
+									"type": "text"
+								},
+								{
+									"key": "image",
+									"value": "image/img.jpg",
+									"description": "Imagem do produto",
+									"type": "text"
+								},
+								{
+									"key": "description",
+									"value": "Teste de criação de produtos",
+									"description": "Descrição do produto",
+									"type": "text"
+								},
+								{
+									"key": "old_price",
+									"value": "0.00",
+									"description": "Valor de Markup",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "https://{{url}}/{{versão}}/{{restaurant_id}}/",
+							"protocol": "https",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"{{versão}}",
+								"{{restaurant_id}}",
+								""
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Exemplo para criar um produto de um restaurante",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "name",
+											"value": "Produto Goomer",
+											"description": "Nome do produto",
+											"type": "text"
+										},
+										{
+											"key": "price",
+											"value": "20.5",
+											"description": "Valor do produto",
+											"type": "text"
+										},
+										{
+											"key": "image",
+											"value": "image/img.jpg",
+											"description": "Imagem do produto",
+											"type": "text"
+										},
+										{
+											"key": "description",
+											"value": "Teste de criação de produtos",
+											"description": "Descrição do produto",
+											"type": "text"
+										},
+										{
+											"key": "old_price",
+											"value": "0.00",
+											"description": "Valor de Markup",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "https://{{url}}/{{versão}}/{{restaurant_id}}/",
+									"protocol": "https",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"{{versão}}",
+										"{{restaurant_id}}",
+										""
+									]
+								}
+							},
+							"_postman_previewlanguage": "json",
+							"header": null,
+							"cookie": [],
+							"body": "{\r\n    \"product\": {\r\n        \"id\": \"1\",\r\n        \"restaurant_id\": \"1\",\r\n        \"name\": \"Produto Goomer\",\r\n        \"image\": \"image/img.jpg\",\r\n        \"description\": \"Teste de criação de produtos\",\r\n        \"price\": \"20.50\",\r\n        \"old_price\": \"0.00\",\r\n        \"created_at\": \"2021-03-19 00:15:43\",\r\n        \"updated_at\": \"2021-03-19 00:15:43\",\r\n        \"restaurant\": {\r\n            \"id\": \"1\",\r\n            \"name\": \"Goomer\",\r\n            \"image\": \"imagem/img.jpg\",\r\n            \"address\": \"Rua Sorocaba, 000, Sorocaba,São Paulo\",\r\n            \"is_active\": \"1\",\r\n            \"is_accepted\": \"1\",\r\n            \"is_schedulable\": \"1\",\r\n            \"schedule_data\": \"{\\\"wednesday\\\":[{\\\"open\\\" :\\\"19:00\\\",\\\"close\\\" :\\\"23:59\\\"}]}\",\r\n            \"created_at\": \"2021-03-18 23:52:10\",\r\n            \"updated_at\": \"2021-03-19 00:06:03\"\r\n        }\r\n    }\r\n}"
+						}
+					]
+				},
+				{
+					"name": "Listar os dados de um produto",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://{{url}}/{{versão}}/{{restaurant_id}}/{{product_id}}",
+							"protocol": "https",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"{{versão}}",
+								"{{restaurant_id}}",
+								"{{product_id}}"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Exemplo para listar os dados de um produto",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "https://{{url}}/{{versão}}/{{restaurant_id}}/{{product_id}}",
+									"protocol": "https",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"{{versão}}",
+										"{{restaurant_id}}",
+										"{{product_id}}"
+									]
+								}
+							},
+							"_postman_previewlanguage": "json",
+							"header": null,
+							"cookie": [],
+							"body": "{\r\n    \"product\": {\r\n        \"id\": \"1\",\r\n        \"restaurant_id\": \"1\",\r\n        \"name\": \"Produto Goomer\",\r\n        \"image\": \"image/img.jpg\",\r\n        \"description\": \"Teste de criação de produtos\",\r\n        \"price\": \"20.50\",\r\n        \"old_price\": \"0.00\",\r\n        \"created_at\": \"2021-03-19 00:15:43\",\r\n        \"updated_at\": \"2021-03-19 00:15:43\",\r\n        \"restaurant\": {\r\n            \"id\": \"1\",\r\n            \"name\": \"Goomer\",\r\n            \"image\": \"imagem/img.jpg\",\r\n            \"address\": \"Rua Sorocaba, 000, Sorocaba,São Paulo\",\r\n            \"is_active\": \"1\",\r\n            \"is_accepted\": \"1\",\r\n            \"is_schedulable\": \"1\",\r\n            \"schedule_data\": \"{\\\"wednesday\\\":[{\\\"open\\\" :\\\"19:00\\\",\\\"close\\\" :\\\"23:59\\\"}]}\",\r\n            \"created_at\": \"2021-03-18 23:52:10\",\r\n            \"updated_at\": \"2021-03-19 00:06:03\"\r\n        }\r\n    }\r\n}"
+						}
+					]
+				},
+				{
+					"name": "Alterar um produto de um restaurante",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "name",
+									"value": "Produto Goomer Api",
+									"description": "Nome do produto",
+									"type": "text"
+								},
+								{
+									"key": "image",
+									"value": "image/img.jpg",
+									"description": "Imagem do produto",
+									"type": "text"
+								},
+								{
+									"key": "description",
+									"value": "Teste de atualização de produto",
+									"description": "Descrição do produto",
+									"type": "text"
+								},
+								{
+									"key": "price",
+									"value": "15.90",
+									"description": "Valor do produto",
+									"type": "text"
+								},
+								{
+									"key": "old_price",
+									"value": "25.99",
+									"description": "Valor de Markup",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "https://{{url}}/{{versão}}/{{restaurant_id}}/{{product_id}}",
+							"protocol": "https",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"{{versão}}",
+								"{{restaurant_id}}",
+								"{{product_id}}"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Exemplo para alterar um produto de um restaurante",
+							"originalRequest": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"key": "name",
+											"value": "Produto Goomer Api",
+											"description": "Nome do produto",
+											"type": "text"
+										},
+										{
+											"key": "image",
+											"value": "image/img.jpg",
+											"description": "Imagem do produto",
+											"type": "text"
+										},
+										{
+											"key": "description",
+											"value": "Teste de atualização de produto",
+											"description": "Descrição do produto",
+											"type": "text"
+										},
+										{
+											"key": "price",
+											"value": "15.90",
+											"description": "Valor do produto",
+											"type": "text"
+										},
+										{
+											"key": "old_price",
+											"value": "25.99",
+											"description": "Valor de Markup",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "https://{{url}}/{{versão}}/{{restaurant_id}}/{{product_id}}",
+									"protocol": "https",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"{{versão}}",
+										"{{restaurant_id}}",
+										"{{product_id}}"
+									]
+								}
+							},
+							"_postman_previewlanguage": "json",
+							"header": null,
+							"cookie": [],
+							"body": "{\n    \"product\": {\n        \"id\": \"1\",\n        \"restaurant_id\": \"1\",\n        \"name\": \"Produto Goomer Api\",\n        \"image\": \"image/img.jpg\",\n        \"description\": \"Teste de atualização de produto\",\n        \"price\": \"15.90\",\n        \"old_price\": \"25.99\",\n        \"created_at\": \"2021-03-19 00:15:43\",\n        \"updated_at\": \"2021-03-19 00:24:25\",\n        \"restaurant\": {\n            \"id\": \"1\",\n            \"name\": \"Goomer\",\n            \"image\": \"imagem/img.jpg\",\n            \"address\": \"Rua Sorocaba, 000, Sorocaba,São Paulo\",\n            \"is_active\": \"1\",\n            \"is_accepted\": \"1\",\n            \"is_schedulable\": \"1\",\n            \"schedule_data\": \"{\\\"wednesday\\\":[{\\\"open\\\" :\\\"19:00\\\",\\\"close\\\" :\\\"23:59\\\"}]}\",\n            \"created_at\": \"2021-03-18 23:52:10\",\n            \"updated_at\": \"2021-03-19 00:06:03\"\n        }\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "Excluir um produto de um restaurante",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "https://{{url}}/{{versão}}/{{restaurant_id}}/{{product_id}}",
+							"protocol": "https",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"{{versão}}",
+								"{{restaurant_id}}",
+								"{{product_id}}"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Exemplo para excluir um produto de um restaurante",
+							"originalRequest": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "https://{{url}}/{{versão}}/{{restaurant_id}}/{{product_id}}",
+									"protocol": "https",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"{{versão}}",
+										"{{restaurant_id}}",
+										"{{product_id}}"
+									]
+								}
+							},
+							"_postman_previewlanguage": "json",
+							"header": null,
+							"cookie": [],
+							"body": "{\n    \"accepted\": {\n        \"type\": \"success\",\n        \"message\": \"O produto foi excluído com sucesso\"\n    }\n}"
+						}
+					]
+				}
+			],
+			"description": "Rotas para os produtos"
+		}
+	],
+	"variable": [
+		{
+			"key": "versão",
+			"value": "v1"
+		},
+		{
+			"key": "url",
+			"value": "goomerapi.test"
+		},
+		{
+			"key": "restaurant_id",
+			"value": "1"
+		},
+		{
+			"key": "product_id",
+			"value": "1"
+		}
+	]
+}

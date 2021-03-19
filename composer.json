@@ -1,0 +1,39 @@
+{
+  "name": "wagnermontanini/goomerapi",
+  "description": "Criar uma API RESTful capaz de gerenciar os restaurantes e os produtos do seu cardápio.",
+  "keywords": [
+    "GoomerAPI",
+    "Goomer API",
+    "WagnerMontanini"
+  ],
+  "minimum-stability": "stable",
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "Wagner Montanini",
+      "email": "wagnermontanini@hotmail.com.br",
+      "role": "Developer"
+    }
+  ],
+  "config": {
+    "vendor-dir": "vendor"
+  },
+  "autoload": {
+    "psr-4": {
+      "WagnerMontanini\\GoomerApi\\": "source/"
+    },
+    "files": [
+      "source/Boot/Helpers.php"
+    ]
+  },
+  "require": {
+    "php": "^7.4",
+    "ext-pdo": "*",
+    "ext-json": "*",
+    "coffeecode/uploader": "^1.0",
+    "coffeecode/cropper": "^1.3",
+    "coffeecode/paginator": "^1.0",
+    "coffeecode/router": "^1.0",
+    "coffeecode/datalayer": "^1.1"
+  }
+}

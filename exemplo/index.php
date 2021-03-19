@@ -1,7 +1,8 @@
 <?php
 ob_start();
 
-require __DIR__ . "/vendor/autoload.php";
+require __DIR__ . "/../vendor/autoload.php";
+require __DIR__ . "/Config.php"; 
 
 /**
  * BOOTSTRAP
@@ -25,12 +26,11 @@ $route->put("/{restaurant_id}", "Restaurants:update");
 $route->delete("/{restaurant_id}", "Restaurants:delete");
 
 //products
-$route->group("/products");
-$route->get("/", "Products:index");
-$route->post("/", "Products:create");
-$route->get("/{product_id}", "Products:read");
-$route->put("/{product_id}", "Products:update");
-$route->delete("/{product_id}", "Products:delete");
+$route->get("/{restaurant_id}/", "Products:index");
+$route->post("/{restaurant_id}/", "Products:create");
+$route->get("/{restaurant_id}/{product_id}", "Products:read");
+$route->put("/{restaurant_id}/{product_id}", "Products:update");
+$route->delete("/{restaurant_id}/{product_id}", "Products:delete");
 
 
 /**
