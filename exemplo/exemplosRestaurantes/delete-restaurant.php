@@ -19,8 +19,4 @@ $errmsg  = curl_error($curl) ;
 
 curl_close($curl);
 
-if ($err) {
-  echo $errmsg; 
-} else {
-  echo $response;
-}
+echo (!empty($err)) ? $errmsg : $response;
