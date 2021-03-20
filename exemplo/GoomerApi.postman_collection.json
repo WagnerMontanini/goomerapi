@@ -99,12 +99,7 @@
 									"description": "Horários de Funcionamento",
 									"type": "text"
 								}
-							],
-							"options": {
-								"raw": {
-									"language": "json"
-								}
-							}
+							]
 						},
 						"url": {
 							"raw": "https://{{url}}/{{versão}}",
@@ -285,12 +280,7 @@
 									"description": "Horários de Funcionamento",
 									"type": "text"
 								}
-							],
-							"options": {
-								"raw": {
-									"language": "json"
-								}
-							}
+							]
 						},
 						"url": {
 							"raw": "https://{{url}}/{{versão}}/{{restaurant_id}}",
@@ -435,7 +425,7 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "https://{{url}}/{{versão}}/{{restaurant_id}}/",
+							"raw": "https://{{url}}/{{versão}}/{{restaurant_id}}/products",
 							"protocol": "https",
 							"host": [
 								"{{url}}"
@@ -443,7 +433,7 @@
 							"path": [
 								"{{versão}}",
 								"{{restaurant_id}}",
-								""
+								"products"
 							]
 						}
 					},
@@ -454,7 +444,7 @@
 								"method": "GET",
 								"header": [],
 								"url": {
-									"raw": "https://{{url}}/{{versão}}/{{restaurant_id}}/",
+									"raw": "https://{{url}}/{{versão}}/{{restaurant_id}}/products",
 									"protocol": "https",
 									"host": [
 										"{{url}}"
@@ -462,14 +452,14 @@
 									"path": [
 										"{{versão}}",
 										"{{restaurant_id}}",
-										""
+										"products"
 									]
 								}
 							},
 							"_postman_previewlanguage": "json",
 							"header": null,
 							"cookie": [],
-							"body": "{\n    \"results\": 1,\n    \"page\": 1,\n    \"pages\": 1,\n    \"products\": [\n        {\n            \"id\": \"1\",\n            \"restaurant_id\": \"1\",\n            \"name\": \"Produto Goomer\",\n            \"image\": \"image/img.jpg\",\n            \"description\": \"Teste de criação de produtos\",\n            \"price\": \"20.50\",\n            \"old_price\": \"0.00\",\n            \"created_at\": \"2021-03-19 00:15:43\",\n            \"updated_at\": \"2021-03-19 00:15:43\"\n        }\n    ]\n}"
+							"body": "{\n    \"results\": 1,\n    \"page\": 1,\n    \"pages\": 1,\n    \"products\": [\n        {\n            \"id\": \"1\",\n            \"restaurant_id\": \"1\",\n            \"category_id\": \"1\",\n            \"name\": \"Produto Goomer\",\n            \"image\": \"image/img.jpg\",\n            \"description\": \"Teste de criação de produtos\",\n            \"price\": \"20.50\",\n            \"old_price\": \"0.00\",\n            \"created_at\": \"2021-03-20 12:52:46\",\n            \"updated_at\": \"2021-03-20 12:52:46\",\n            \"restaurant\": {\n                \"id\": \"1\",\n                \"name\": \"Goomer\",\n                \"image\": \"imagem/img.jpg\",\n                \"address\": \"Rua Sorocaba, 000, Sorocaba,São Paulo\",\n                \"is_active\": \"1\",\n                \"is_accepted\": \"1\",\n                \"is_schedulable\": \"1\",\n                \"schedule_data\": \"{\\\"wednesday\\\":[{\\\"open\\\" :\\\"19:00\\\",\\\"close\\\" :\\\"23:59\\\"}]}\",\n                \"created_at\": \"2021-03-18 23:52:10\",\n                \"updated_at\": \"2021-03-19 00:06:03\"\n            },\n            \"category\": {\n                \"id\": \"1\",\n                \"restaurant_id\": \"1\",\n                \"name\": \"Categoria Goomer\",\n                \"created_at\": \"2021-03-20 12:20:38\",\n                \"updated_at\": \"2021-03-20 12:20:38\"\n            }\n        }\n    ]\n}"
 						}
 					]
 				},
@@ -481,6 +471,12 @@
 						"body": {
 							"mode": "formdata",
 							"formdata": [
+								{
+									"key": "category_id",
+									"value": "1",
+									"description": "ID da categoria de produtos",
+									"type": "text"
+								},
 								{
 									"key": "name",
 									"value": "Produto Goomer",
@@ -514,7 +510,7 @@
 							]
 						},
 						"url": {
-							"raw": "https://{{url}}/{{versão}}/{{restaurant_id}}/",
+							"raw": "https://{{url}}/{{versão}}/{{restaurant_id}}/products",
 							"protocol": "https",
 							"host": [
 								"{{url}}"
@@ -522,7 +518,7 @@
 							"path": [
 								"{{versão}}",
 								"{{restaurant_id}}",
-								""
+								"products"
 							]
 						}
 					},
@@ -535,6 +531,12 @@
 								"body": {
 									"mode": "formdata",
 									"formdata": [
+										{
+											"key": "category_id",
+											"value": "1",
+											"description": "ID da categoria de produtos",
+											"type": "text"
+										},
 										{
 											"key": "name",
 											"value": "Produto Goomer",
@@ -583,7 +585,7 @@
 							"_postman_previewlanguage": "json",
 							"header": null,
 							"cookie": [],
-							"body": "{\r\n    \"product\": {\r\n        \"id\": \"1\",\r\n        \"restaurant_id\": \"1\",\r\n        \"name\": \"Produto Goomer\",\r\n        \"image\": \"image/img.jpg\",\r\n        \"description\": \"Teste de criação de produtos\",\r\n        \"price\": \"20.50\",\r\n        \"old_price\": \"0.00\",\r\n        \"created_at\": \"2021-03-19 00:15:43\",\r\n        \"updated_at\": \"2021-03-19 00:15:43\",\r\n        \"restaurant\": {\r\n            \"id\": \"1\",\r\n            \"name\": \"Goomer\",\r\n            \"image\": \"imagem/img.jpg\",\r\n            \"address\": \"Rua Sorocaba, 000, Sorocaba,São Paulo\",\r\n            \"is_active\": \"1\",\r\n            \"is_accepted\": \"1\",\r\n            \"is_schedulable\": \"1\",\r\n            \"schedule_data\": \"{\\\"wednesday\\\":[{\\\"open\\\" :\\\"19:00\\\",\\\"close\\\" :\\\"23:59\\\"}]}\",\r\n            \"created_at\": \"2021-03-18 23:52:10\",\r\n            \"updated_at\": \"2021-03-19 00:06:03\"\r\n        }\r\n    }\r\n}"
+							"body": "{\r\n    \"product\": {\r\n        \"id\": \"1\",\r\n        \"restaurant_id\": \"1\",\r\n        \"category_id\": \"1\",\r\n        \"name\": \"Produto Goomer\",\r\n        \"image\": \"image/img.jpg\",\r\n        \"description\": \"Teste de criação de produtos\",\r\n        \"price\": \"20.50\",\r\n        \"old_price\": \"0.00\",\r\n        \"created_at\": \"2021-03-20 12:58:26\",\r\n        \"updated_at\": \"2021-03-20 12:58:26\",\r\n        \"restaurant\": {\r\n            \"id\": \"1\",\r\n            \"name\": \"Goomer\",\r\n            \"image\": \"imagem/img.jpg\",\r\n            \"address\": \"Rua Sorocaba, 000, Sorocaba,São Paulo\",\r\n            \"is_active\": \"1\",\r\n            \"is_accepted\": \"1\",\r\n            \"is_schedulable\": \"1\",\r\n            \"schedule_data\": \"{\\\"wednesday\\\":[{\\\"open\\\" :\\\"19:00\\\",\\\"close\\\" :\\\"23:59\\\"}]}\",\r\n            \"created_at\": \"2021-03-18 23:52:10\",\r\n            \"updated_at\": \"2021-03-19 00:06:03\"\r\n        },\r\n        \"category\": {\r\n            \"id\": \"1\",\r\n            \"restaurant_id\": \"1\",\r\n            \"name\": \"Categoria Goomer\",\r\n            \"created_at\": \"2021-03-20 12:20:38\",\r\n            \"updated_at\": \"2021-03-20 12:20:38\"\r\n        }\r\n    }\r\n}"
 						}
 					]
 				},
@@ -593,7 +595,7 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "https://{{url}}/{{versão}}/{{restaurant_id}}/{{product_id}}",
+							"raw": "https://{{url}}/{{versão}}/{{restaurant_id}}/products/{{product_id}}",
 							"protocol": "https",
 							"host": [
 								"{{url}}"
@@ -601,6 +603,7 @@
 							"path": [
 								"{{versão}}",
 								"{{restaurant_id}}",
+								"products",
 								"{{product_id}}"
 							]
 						}
@@ -612,7 +615,7 @@
 								"method": "GET",
 								"header": [],
 								"url": {
-									"raw": "https://{{url}}/{{versão}}/{{restaurant_id}}/{{product_id}}",
+									"raw": "https://{{url}}/{{versão}}/{{restaurant_id}}/products/{{product_id}}",
 									"protocol": "https",
 									"host": [
 										"{{url}}"
@@ -620,6 +623,7 @@
 									"path": [
 										"{{versão}}",
 										"{{restaurant_id}}",
+										"products",
 										"{{product_id}}"
 									]
 								}
@@ -627,7 +631,7 @@
 							"_postman_previewlanguage": "json",
 							"header": null,
 							"cookie": [],
-							"body": "{\r\n    \"product\": {\r\n        \"id\": \"1\",\r\n        \"restaurant_id\": \"1\",\r\n        \"name\": \"Produto Goomer\",\r\n        \"image\": \"image/img.jpg\",\r\n        \"description\": \"Teste de criação de produtos\",\r\n        \"price\": \"20.50\",\r\n        \"old_price\": \"0.00\",\r\n        \"created_at\": \"2021-03-19 00:15:43\",\r\n        \"updated_at\": \"2021-03-19 00:15:43\",\r\n        \"restaurant\": {\r\n            \"id\": \"1\",\r\n            \"name\": \"Goomer\",\r\n            \"image\": \"imagem/img.jpg\",\r\n            \"address\": \"Rua Sorocaba, 000, Sorocaba,São Paulo\",\r\n            \"is_active\": \"1\",\r\n            \"is_accepted\": \"1\",\r\n            \"is_schedulable\": \"1\",\r\n            \"schedule_data\": \"{\\\"wednesday\\\":[{\\\"open\\\" :\\\"19:00\\\",\\\"close\\\" :\\\"23:59\\\"}]}\",\r\n            \"created_at\": \"2021-03-18 23:52:10\",\r\n            \"updated_at\": \"2021-03-19 00:06:03\"\r\n        }\r\n    }\r\n}"
+							"body": "{\r\n    \"product\": {\r\n        \"id\": \"1\",\r\n        \"restaurant_id\": \"1\",\r\n        \"category_id\": \"1\",\r\n        \"name\": \"Produto Goomer\",\r\n        \"image\": \"image/img.jpg\",\r\n        \"description\": \"Teste de criação de produtos\",\r\n        \"price\": \"20.50\",\r\n        \"old_price\": \"0.00\",\r\n        \"created_at\": \"2021-03-20 12:52:46\",\r\n        \"updated_at\": \"2021-03-20 12:52:46\",\r\n        \"restaurant\": {\r\n            \"id\": \"1\",\r\n            \"name\": \"Goomer\",\r\n            \"image\": \"imagem/img.jpg\",\r\n            \"address\": \"Rua Sorocaba, 000, Sorocaba,São Paulo\",\r\n            \"is_active\": \"1\",\r\n            \"is_accepted\": \"1\",\r\n            \"is_schedulable\": \"1\",\r\n            \"schedule_data\": \"{\\\"wednesday\\\":[{\\\"open\\\" :\\\"19:00\\\",\\\"close\\\" :\\\"23:59\\\"}]}\",\r\n            \"created_at\": \"2021-03-18 23:52:10\",\r\n            \"updated_at\": \"2021-03-19 00:06:03\"\r\n        },\r\n        \"category\": {\r\n            \"id\": \"1\",\r\n            \"restaurant_id\": \"1\",\r\n            \"name\": \"Categoria Goomer\",\r\n            \"created_at\": \"2021-03-20 12:20:38\",\r\n            \"updated_at\": \"2021-03-20 12:20:38\"\r\n        }\r\n    }\r\n}"
 						}
 					]
 				},
@@ -639,6 +643,12 @@
 						"body": {
 							"mode": "urlencoded",
 							"urlencoded": [
+								{
+									"key": "category_id",
+									"value": "1",
+									"description": "ID da categoria de produtos",
+									"type": "text"
+								},
 								{
 									"key": "name",
 									"value": "Produto Goomer Api",
@@ -672,7 +682,7 @@
 							]
 						},
 						"url": {
-							"raw": "https://{{url}}/{{versão}}/{{restaurant_id}}/{{product_id}}",
+							"raw": "https://{{url}}/{{versão}}/{{restaurant_id}}/products/{{product_id}}",
 							"protocol": "https",
 							"host": [
 								"{{url}}"
@@ -680,6 +690,7 @@
 							"path": [
 								"{{versão}}",
 								"{{restaurant_id}}",
+								"products",
 								"{{product_id}}"
 							]
 						}
@@ -693,6 +704,12 @@
 								"body": {
 									"mode": "urlencoded",
 									"urlencoded": [
+										{
+											"key": "category_id",
+											"value": "1",
+											"description": "ID da categoria de produtos",
+											"type": "text"
+										},
 										{
 											"key": "name",
 											"value": "Produto Goomer Api",
@@ -726,7 +743,7 @@
 									]
 								},
 								"url": {
-									"raw": "https://{{url}}/{{versão}}/{{restaurant_id}}/{{product_id}}",
+									"raw": "https://{{url}}/{{versão}}/{{restaurant_id}}/products/{{product_id}}",
 									"protocol": "https",
 									"host": [
 										"{{url}}"
@@ -734,6 +751,7 @@
 									"path": [
 										"{{versão}}",
 										"{{restaurant_id}}",
+										"products",
 										"{{product_id}}"
 									]
 								}
@@ -741,7 +759,7 @@
 							"_postman_previewlanguage": "json",
 							"header": null,
 							"cookie": [],
-							"body": "{\n    \"product\": {\n        \"id\": \"1\",\n        \"restaurant_id\": \"1\",\n        \"name\": \"Produto Goomer Api\",\n        \"image\": \"image/img.jpg\",\n        \"description\": \"Teste de atualização de produto\",\n        \"price\": \"15.90\",\n        \"old_price\": \"25.99\",\n        \"created_at\": \"2021-03-19 00:15:43\",\n        \"updated_at\": \"2021-03-19 00:24:25\",\n        \"restaurant\": {\n            \"id\": \"1\",\n            \"name\": \"Goomer\",\n            \"image\": \"imagem/img.jpg\",\n            \"address\": \"Rua Sorocaba, 000, Sorocaba,São Paulo\",\n            \"is_active\": \"1\",\n            \"is_accepted\": \"1\",\n            \"is_schedulable\": \"1\",\n            \"schedule_data\": \"{\\\"wednesday\\\":[{\\\"open\\\" :\\\"19:00\\\",\\\"close\\\" :\\\"23:59\\\"}]}\",\n            \"created_at\": \"2021-03-18 23:52:10\",\n            \"updated_at\": \"2021-03-19 00:06:03\"\n        }\n    }\n}"
+							"body": "{\n    \"product\": {\n        \"id\": \"1\",\n        \"restaurant_id\": \"1\",\n        \"category_id\": \"1\",\n        \"name\": \"Produto Goomer Api\",\n        \"image\": \"image/img.jpg\",\n        \"description\": \"Teste de atualização de produto\",\n        \"price\": \"15.90\",\n        \"old_price\": \"25.99\",\n        \"created_at\": \"2021-03-20 12:52:46\",\n        \"updated_at\": \"2021-03-20 13:02:12\",\n        \"restaurant\": {\n            \"id\": \"1\",\n            \"name\": \"Goomer\",\n            \"image\": \"imagem/img.jpg\",\n            \"address\": \"Rua Sorocaba, 000, Sorocaba,São Paulo\",\n            \"is_active\": \"1\",\n            \"is_accepted\": \"1\",\n            \"is_schedulable\": \"1\",\n            \"schedule_data\": \"{\\\"wednesday\\\":[{\\\"open\\\" :\\\"19:00\\\",\\\"close\\\" :\\\"23:59\\\"}]}\",\n            \"created_at\": \"2021-03-18 23:52:10\",\n            \"updated_at\": \"2021-03-19 00:06:03\"\n        },\n        \"category\": {\n            \"id\": \"1\",\n            \"restaurant_id\": \"1\",\n            \"name\": \"Categoria Goomer\",\n            \"created_at\": \"2021-03-20 12:20:38\",\n            \"updated_at\": \"2021-03-20 12:20:38\"\n        }\n    }\n}"
 						}
 					]
 				},
@@ -751,7 +769,7 @@
 						"method": "DELETE",
 						"header": [],
 						"url": {
-							"raw": "https://{{url}}/{{versão}}/{{restaurant_id}}/{{product_id}}",
+							"raw": "https://{{url}}/{{versão}}/{{restaurant_id}}/products/{{product_id}}",
 							"protocol": "https",
 							"host": [
 								"{{url}}"
@@ -759,6 +777,7 @@
 							"path": [
 								"{{versão}}",
 								"{{restaurant_id}}",
+								"products",
 								"{{product_id}}"
 							]
 						}
@@ -770,7 +789,7 @@
 								"method": "DELETE",
 								"header": [],
 								"url": {
-									"raw": "https://{{url}}/{{versão}}/{{restaurant_id}}/{{product_id}}",
+									"raw": "https://{{url}}/{{versão}}/{{restaurant_id}}/products/{{product_id}}",
 									"protocol": "https",
 									"host": [
 										"{{url}}"
@@ -778,6 +797,7 @@
 									"path": [
 										"{{versão}}",
 										"{{restaurant_id}}",
+										"products",
 										"{{product_id}}"
 									]
 								}
@@ -791,6 +811,302 @@
 				}
 			],
 			"description": "Rotas para os produtos"
+		},
+		{
+			"name": "Categorias de Produtos",
+			"item": [
+				{
+					"name": "Listar todas as categorias de um restautante",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://{{url}}/{{versão}}/{{restaurant_id}}/categories",
+							"protocol": "https",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"{{versão}}",
+								"{{restaurant_id}}",
+								"categories"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Exemplo para listar todas as categorias de um restautante",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "https://{{url}}/{{versão}}/{{restaurant_id}}/categories",
+									"protocol": "https",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"{{versão}}",
+										"{{restaurant_id}}",
+										"categories"
+									]
+								}
+							},
+							"_postman_previewlanguage": "json",
+							"header": null,
+							"cookie": [],
+							"body": "{\n    \"results\": 1,\n    \"page\": 1,\n    \"pages\": 1,\n    \"products_categories\": [\n        {\n            \"id\": \"1\",\n            \"restaurant_id\": \"1\",\n            \"name\": \"Categoria Goomer\",\n            \"created_at\": \"2021-03-20 12:20:38\",\n            \"updated_at\": \"2021-03-20 12:20:38\",\n            \"restaurant\": {\n                \"id\": \"1\",\n                \"name\": \"Goomer\",\n                \"image\": \"imagem/img.jpg\",\n                \"address\": \"Rua Sorocaba, 000, Sorocaba,São Paulo\",\n                \"is_active\": \"1\",\n                \"is_accepted\": \"1\",\n                \"is_schedulable\": \"1\",\n                \"schedule_data\": \"{\\\"wednesday\\\":[{\\\"open\\\" :\\\"19:00\\\",\\\"close\\\" :\\\"23:59\\\"}]}\",\n                \"created_at\": \"2021-03-18 23:52:10\",\n                \"updated_at\": \"2021-03-19 00:06:03\"\n            }\n        }\n    ]\n}"
+						}
+					]
+				},
+				{
+					"name": "Criar uma categoria de um restaurante",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "name",
+									"value": "Categoria Goomer",
+									"description": "Nome da categoria",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "https://{{url}}/{{versão}}/{{restaurant_id}}/categories",
+							"protocol": "https",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"{{versão}}",
+								"{{restaurant_id}}",
+								"categories"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Exemplo para criar uma categoria de um restaurante",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "name",
+											"value": "Categoria Goomer",
+											"description": "Nome da categoria",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "https://{{url}}/{{versão}}/{{restaurant_id}}/categories",
+									"protocol": "https",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"{{versão}}",
+										"{{restaurant_id}}",
+										"categories"
+									]
+								}
+							},
+							"_postman_previewlanguage": "json",
+							"header": null,
+							"cookie": [],
+							"body": "{\r\n    \"product_category\": {\r\n        \"id\": \"1\",\r\n        \"restaurant_id\": \"1\",\r\n        \"name\": \"Categoria Goomer\",\r\n        \"created_at\": \"2021-03-20 13:07:28\",\r\n        \"updated_at\": \"2021-03-20 13:07:28\",\r\n        \"restaurant\": {\r\n            \"id\": \"1\",\r\n            \"name\": \"Goomer\",\r\n            \"image\": \"imagem/img.jpg\",\r\n            \"address\": \"Rua Sorocaba, 000, Sorocaba,São Paulo\",\r\n            \"is_active\": \"1\",\r\n            \"is_accepted\": \"1\",\r\n            \"is_schedulable\": \"1\",\r\n            \"schedule_data\": \"{\\\"wednesday\\\":[{\\\"open\\\" :\\\"19:00\\\",\\\"close\\\" :\\\"23:59\\\"}]}\",\r\n            \"created_at\": \"2021-03-18 23:52:10\",\r\n            \"updated_at\": \"2021-03-19 00:06:03\"\r\n        }\r\n    }\r\n}"
+						}
+					]
+				},
+				{
+					"name": "Listar os dados de uma categoria",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://{{url}}/{{versão}}/{{restaurant_id}}/categories/{{category_id}}",
+							"protocol": "https",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"{{versão}}",
+								"{{restaurant_id}}",
+								"categories",
+								"{{category_id}}"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Exemplo para listar os dados de uma categoria",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "https://{{url}}/{{versão}}/{{restaurant_id}}/categories/{{category_id}}",
+									"protocol": "https",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"{{versão}}",
+										"{{restaurant_id}}",
+										"categories",
+										"{{category_id}}"
+									]
+								}
+							},
+							"_postman_previewlanguage": "json",
+							"header": null,
+							"cookie": [],
+							"body": "{\r\n    \"product_category\": {\r\n        \"id\": \"1\",\r\n        \"restaurant_id\": \"1\",\r\n        \"name\": \"Categoria Goomer\",\r\n        \"created_at\": \"2021-03-20 12:20:38\",\r\n        \"updated_at\": \"2021-03-20 12:20:38\",\r\n        \"restaurant\": {\r\n            \"id\": \"1\",\r\n            \"name\": \"Goomer\",\r\n            \"image\": \"imagem/img.jpg\",\r\n            \"address\": \"Rua Sorocaba, 000, Sorocaba,São Paulo\",\r\n            \"is_active\": \"1\",\r\n            \"is_accepted\": \"1\",\r\n            \"is_schedulable\": \"1\",\r\n            \"schedule_data\": \"{\\\"wednesday\\\":[{\\\"open\\\" :\\\"19:00\\\",\\\"close\\\" :\\\"23:59\\\"}]}\",\r\n            \"created_at\": \"2021-03-18 23:52:10\",\r\n            \"updated_at\": \"2021-03-19 00:06:03\"\r\n        }\r\n    }\r\n}"
+						}
+					]
+				},
+				{
+					"name": "Alterar uma categoria de um restaurante",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "name",
+									"value": "Categoria Goomer Api",
+									"description": "Nome da categoria",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "https://{{url}}/{{versão}}/{{restaurant_id}}/categories/{{category_id}}",
+							"protocol": "https",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"{{versão}}",
+								"{{restaurant_id}}",
+								"categories",
+								"{{category_id}}"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Exemplo para alterar uma categoria de um restaurante",
+							"originalRequest": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"key": "name",
+											"value": "Categoria Goomer Api",
+											"description": "Nome da categoria",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "https://{{url}}/{{versão}}/{{restaurant_id}}/categories/{{category_id}}",
+									"protocol": "https",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"{{versão}}",
+										"{{restaurant_id}}",
+										"categories",
+										"{{category_id}}"
+									]
+								}
+							},
+							"_postman_previewlanguage": "json",
+							"header": null,
+							"cookie": [],
+							"body": "{\n    \"product_category\": {\n        \"id\": \"1\",\n        \"restaurant_id\": \"1\",\n        \"name\": \"Categoria Goomer Api\",\n        \"created_at\": \"2021-03-20 12:20:38\",\n        \"updated_at\": \"2021-03-20 13:08:06\",\n        \"restaurant\": {\n            \"id\": \"1\",\n            \"name\": \"Goomer\",\n            \"image\": \"imagem/img.jpg\",\n            \"address\": \"Rua Sorocaba, 000, Sorocaba,São Paulo\",\n            \"is_active\": \"1\",\n            \"is_accepted\": \"1\",\n            \"is_schedulable\": \"1\",\n            \"schedule_data\": \"{\\\"wednesday\\\":[{\\\"open\\\" :\\\"19:00\\\",\\\"close\\\" :\\\"23:59\\\"}]}\",\n            \"created_at\": \"2021-03-18 23:52:10\",\n            \"updated_at\": \"2021-03-19 00:06:03\"\n        }\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "Excluir uma categoria de um restaurante",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "https://{{url}}/{{versão}}/{{restaurant_id}}/categories/{{category_id}}",
+							"protocol": "https",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"{{versão}}",
+								"{{restaurant_id}}",
+								"categories",
+								"{{category_id}}"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Exemplo para excluir uma categoria de um restaurante",
+							"originalRequest": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "https://{{url}}/{{versão}}/{{restaurant_id}}/categories/{{category_id}}",
+									"protocol": "https",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"{{versão}}",
+										"{{restaurant_id}}",
+										"categories",
+										"{{category_id}}"
+									]
+								}
+							},
+							"_postman_previewlanguage": "json",
+							"header": null,
+							"cookie": [],
+							"body": "{\n    \"accepted\": {\n        \"type\": \"success\",\n        \"message\": \"A categoria foi excluído com sucesso\"\n    }\n}"
+						}
+					]
+				}
+			],
+			"description": "Rotas para os produtos"
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
 		}
 	],
 	"variable": [
@@ -808,6 +1124,10 @@
 		},
 		{
 			"key": "product_id",
+			"value": "1"
+		},
+		{
+			"key": "category_id",
 			"value": "1"
 		}
 	]

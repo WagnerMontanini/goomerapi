@@ -4,35 +4,28 @@ namespace WagnerMontanini\GoomerApi\Models;
 
 use CoffeeCode\DataLayer\DataLayer;
 use WagnerMontanini\GoomerApi\Models\Restaurant;
-use WagnerMontanini\GoomerApi\Models\ProductCategory;
 
 /**
- * Class Product
+ * Class ProductCategory
  * @package WagnerMontanini\GoomerApi\Models
  */
-class Product extends DataLayer
+class ProductCategory extends DataLayer
 {
     
     /**
-     * Product constructor.
+     * ProductCategory constructor.
      */
     public function __construct()
     {
         parent::__construct(
-            "products",
-            ["restaurant_id", "category_id", "name", "price"]
+            "products_categories",
+            ["restaurant_id", "name"]
         );
     }
 
-    public function restaurant(): Product
+    public function restaurant(): ProductCategory
     {
         $this->restaurant = (new Restaurant())->findById($this->restaurant_id)->data();
-        return $this;
-    }
-
-    public function category(): Product
-    {
-        $this->category = (new ProductCategory())->findById($this->category_id)->data();
         return $this;
     }
 

@@ -20,6 +20,7 @@ USE `goomerapi`;
 CREATE TABLE IF NOT EXISTS `products` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `restaurant_id` int(11) NOT NULL,
+  `category_id` int(11) NOT NULL,
   `name` varchar(191) NOT NULL,
   `image` varchar(191) DEFAULT NULL,
   `description` longtext DEFAULT NULL,
@@ -28,8 +29,25 @@ CREATE TABLE IF NOT EXISTS `products` (
   `created_at` timestamp NOT NULL DEFAULT current_timestamp(),
   `updated_at` timestamp NOT NULL DEFAULT current_timestamp(),
   PRIMARY KEY (`id`),
-  KEY `restaurant_id` (`restaurant_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8mb4 COMMENT='Tabela de Produtos';
+  KEY `restaurant_id` (`restaurant_id`),
+  KEY `category_id` (`category_id`),
+  CONSTRAINT `FK_products_products_categories` FOREIGN KEY (`category_id`) REFERENCES `products_categories` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION,
+  CONSTRAINT `FK_products_restaurants` FOREIGN KEY (`restaurant_id`) REFERENCES `restaurants` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION
+) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=utf8mb4 COMMENT='Tabela de Produtos';
+
+-- Exportação de dados foi desmarcado.
+
+-- Copiando estrutura para tabela goomerapi.products_categories
+CREATE TABLE IF NOT EXISTS `products_categories` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `restaurant_id` int(11) NOT NULL,
+  `name` varchar(191) NOT NULL,
+  `created_at` timestamp NOT NULL DEFAULT current_timestamp(),
+  `updated_at` timestamp NOT NULL DEFAULT current_timestamp(),
+  PRIMARY KEY (`id`),
+  KEY `restaurant_id` (`restaurant_id`),
+  CONSTRAINT `FK_products_categories_restaurants` FOREIGN KEY (`restaurant_id`) REFERENCES `restaurants` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb4 COMMENT='Categorias de Produtos';
 
 -- Exportação de dados foi desmarcado.
 

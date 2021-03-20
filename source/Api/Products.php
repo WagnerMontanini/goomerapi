@@ -5,6 +5,7 @@ namespace WagnerMontanini\GoomerApi\Api;
 use WagnerMontanini\GoomerApi\Support\Pager;
 use WagnerMontanini\GoomerApi\Models\Product;
 use WagnerMontanini\GoomerApi\Models\Restaurant;
+use WagnerMontanini\GoomerApi\Models\ProductCategory;
 
 /**
  * Class Products
@@ -49,8 +50,8 @@ class Products extends GoomerApi
             return;
         }
 
-        $page = (!empty($values["page"]) ? $values["page"] : 1);
-        $pager = new Pager(url("/{restaurant_id}/"));
+        $page = (!empty($data["page"]) ? $data["page"] : 1);
+        $pager = new Pager(url("/{restaurant_id}/products"));
         $pager->pager($products->count(), 10, $page);
 
         $response["results"] = $products->count();
@@ -58,7 +59,7 @@ class Products extends GoomerApi
         $response["pages"] = $pager->pages();
 
         foreach ($products->limit($pager->limit())->offset($pager->offset())->order("name ASC")->fetch(true) as $product) {
-            $response["products"][] = $product->data();
+            $response["products"][] = $product->restaurant()->category()->data();
         }
 
         $this->back($response);
@@ -96,17 +97,29 @@ class Products extends GoomerApi
             return;
         }
 
-        if ( empty($data["name"]) || empty($data["price"]) ) {
+        if ( empty($data["category_id"]) || !$category_id = filter_var($data["category_id"], FILTER_VALIDATE_INT) || empty($data["name"]) || empty($data["price"]) ) {
             $this->call(
                 400,
                 "empty_data",
-                "Para criar informe o nome do produto e o preço"
+                "Para criar informe o ID da categoria do produto, o nome do produto e o preço do produto"
             )->back();
             return ;
         }
 
+        $category = (new ProductCategory())->findById($category_id);
+
+        if (!$category) {
+            $this->call(
+                404,
+                "not_found",
+                "Você tentou cadastrar um produto em uma categoria que não existe"
+            )->back();
+            return;
+        }
+
         $product = new Product();
         $product->restaurant_id = $restaurant_id;
+        $product->category_id = $category_id;
         $product->name = filter_var($data["name"], FILTER_SANITIZE_STRIPPED);
         $product->price = filter_var($data["price"], FILTER_SANITIZE_STRIPPED);
         $product->image = (!empty($data["image"])) ? filter_var($data["image"], FILTER_SANITIZE_STRIPPED) : null;
@@ -123,9 +136,7 @@ class Products extends GoomerApi
             return;
         }
 
-        $product->restaurant();
-
-        $this->back(["product" => $product->data()]);
+        $this->back(["product" => $product->restaurant()->category()->data()]);
         return;
     }
 
@@ -165,9 +176,7 @@ class Products extends GoomerApi
             return;
         }
 
-        $product->restaurant();
-
-        $response["product"] = $product->data();
+        $response["product"] = $product->restaurant()->category()->data();
         
         $this->back($response);
     }
@@ -223,9 +232,7 @@ class Products extends GoomerApi
             return;
         }
 
-        $product->restaurant();
-
-        $this->back(["product" => $product->data()]);
+        $this->back(["product" => $product->restaurant()->category()->data()]);
         return;
     }
 
