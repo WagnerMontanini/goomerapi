@@ -74,17 +74,7 @@ class GoomerApi extends Controller
      */
     protected function requestLimit(string $endpoint, int $limit, int $seconds, bool $attempt = false): bool
     {
-        $userToken = base64_encode(date('Y-m-d'));
-
-        if (!$userToken) {
-            $this->call(
-                400,
-                "invalid_data",
-                "Você precisa informar seu e-mail e senha para continuar"
-            )->back();
-
-            return false;
-        }
+        $userToken = base64_encode($_SERVER['REMOTE_ADDR']);
 
         $cacheDir = __DIR__ . "/../../" . CONF_UPLOAD_DIR . "/requests";
         if (!file_exists($cacheDir) || !is_dir($cacheDir)) {

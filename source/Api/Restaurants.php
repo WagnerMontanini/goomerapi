@@ -25,6 +25,8 @@ class Restaurants extends GoomerApi
      */
     public function index(): void
     {
+        $values = $this->headers;
+        
         //get restaurants
         $restaurants = (new Restaurant())->find();
 

@@ -28,6 +28,8 @@ class ProductsCategories extends GoomerApi
      */
     public function index(array $data): void
     {   
+        $values = $this->headers;
+
         if (empty($data["restaurant_id"]) || !$restaurant_id = filter_var($data["restaurant_id"], FILTER_VALIDATE_INT) ) {
             $this->call(
                 400,
@@ -48,10 +50,10 @@ class ProductsCategories extends GoomerApi
             )->back(["results" => 0]);
             return;
         }
-
-        $page = (!empty($data["page"]) ? $data["page"] : 1);
+        
+        $page = (!empty($values["page"]) ? $values["page"] : 1);
         $pager = new Pager(url("/{restaurant_id}/categories"));
-        $pager->pager($products_categories->count(), 10, $page);
+        $pager->pager($products_categories->count(), 2, $page);
 
         $response["results"] = $products_categories->count();
         $response["page"] = $pager->page();

@@ -13,7 +13,13 @@
 					"name": "Listar todos os restaurantes",
 					"request": {
 						"method": "GET",
-						"header": [],
+						"header": [
+							{
+								"key": "page",
+								"value": "{{number_page}}",
+								"type": "text"
+							}
+						],
 						"url": {
 							"raw": "https://{{url}}/{{versão}}",
 							"protocol": "https",
@@ -30,7 +36,13 @@
 							"name": "Exemplo para listar todos os restaurantes",
 							"originalRequest": {
 								"method": "GET",
-								"header": [],
+								"header": [
+									{
+										"key": "page",
+										"value": "{{number_page}}",
+										"type": "text"
+									}
+								],
 								"url": {
 									"raw": "https://{{url}}/{{versão}}",
 									"protocol": "https",
@@ -423,7 +435,13 @@
 					"name": "Listar todos os produtos de um restautante",
 					"request": {
 						"method": "GET",
-						"header": [],
+						"header": [
+							{
+								"key": "page",
+								"value": "{{number_page}}",
+								"type": "text"
+							}
+						],
 						"url": {
 							"raw": "https://{{url}}/{{versão}}/{{restaurant_id}}/products",
 							"protocol": "https",
@@ -442,7 +460,13 @@
 							"name": "Exemplo para listar todos os produtos de um restautante",
 							"originalRequest": {
 								"method": "GET",
-								"header": [],
+								"header": [
+									{
+										"key": "page",
+										"value": "{{number_page}}",
+										"type": "text"
+									}
+								],
 								"url": {
 									"raw": "https://{{url}}/{{versão}}/{{restaurant_id}}/products",
 									"protocol": "https",
@@ -819,7 +843,18 @@
 					"name": "Listar todas as categorias de um restautante",
 					"request": {
 						"method": "GET",
-						"header": [],
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "page",
+								"value": "{{number_page}}",
+								"type": "text"
+							}
+						],
 						"url": {
 							"raw": "https://{{url}}/{{versão}}/{{restaurant_id}}/categories",
 							"protocol": "https",
@@ -838,7 +873,13 @@
 							"name": "Exemplo para listar todas as categorias de um restautante",
 							"originalRequest": {
 								"method": "GET",
-								"header": [],
+								"header": [
+									{
+										"key": "page",
+										"value": "{{number_page}}",
+										"type": "text"
+									}
+								],
 								"url": {
 									"raw": "https://{{url}}/{{versão}}/{{restaurant_id}}/categories",
 									"protocol": "https",
@@ -1116,7 +1157,7 @@
 		},
 		{
 			"key": "url",
-			"value": "goomerapi.test"
+			"value": "goomerapi.test/exemplo"
 		},
 		{
 			"key": "restaurant_id",
@@ -1128,6 +1169,10 @@
 		},
 		{
 			"key": "category_id",
+			"value": "1"
+		},
+		{
+			"key": "number_page",
 			"value": "1"
 		}
 	]
