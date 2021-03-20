@@ -40,6 +40,7 @@ or run
 ```bash
 composer require wagnermontanini/goomerapi
 ```
+Importe o arquivo SQL em sua base de dados.
 
 ## Documentation
 
