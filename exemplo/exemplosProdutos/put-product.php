@@ -3,7 +3,7 @@
 $curl = curl_init();
 
 curl_setopt_array($curl, array(
-  CURLOPT_URL => 'https://localhost/v1/1/1',
+  CURLOPT_URL => 'https://localhost/v1/1/products/1',
   CURLOPT_RETURNTRANSFER => true,
   CURLOPT_ENCODING => '',
   CURLOPT_MAXREDIRS => 10,
@@ -11,7 +11,7 @@ curl_setopt_array($curl, array(
   CURLOPT_FOLLOWLOCATION => true,
   CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
   CURLOPT_CUSTOMREQUEST => 'PUT',
-  CURLOPT_POSTFIELDS => 'name=Produto%20Goomer%20Api&image=image%2Fimg.jpg&description=Teste%20de%20atualiza%C3%A7%C3%A3o%20de%20produto&price=15.90&old_price=25.99',
+  CURLOPT_POSTFIELDS => 'category_id=1&name=Produto%20Goomer%20Api&image=image%2Fimg.jpg&description=Teste%20de%20atualiza%C3%A7%C3%A3o%20de%20produto&price=15.90&old_price=25.99',
 ));
 
 $response = curl_exec($curl);

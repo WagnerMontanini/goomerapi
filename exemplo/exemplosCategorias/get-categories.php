@@ -1,9 +1,9 @@
 <?php
- 
+
 $curl = curl_init();
- 
+
 curl_setopt_array($curl, array(
-  CURLOPT_URL => 'https://localhost/v1',
+  CURLOPT_URL => 'https://goomerapi.test/exemplo/v1/1/categories',
   CURLOPT_RETURNTRANSFER => true,
   CURLOPT_ENCODING => '',
   CURLOPT_MAXREDIRS => 10,
@@ -15,7 +15,7 @@ curl_setopt_array($curl, array(
     'page: 1'
   ),
 ));
- 
+
 $response = curl_exec($curl);
 $err     = curl_errno($curl);
 $errmsg  = curl_error($curl) ;
@@ -23,3 +23,4 @@ $errmsg  = curl_error($curl) ;
 curl_close($curl);
 
 echo (!empty($err)) ? $errmsg : $response;
+
