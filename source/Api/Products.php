@@ -29,6 +29,8 @@ class Products extends GoomerApi
      */
     public function index(array $data): void
     {   
+        $where = "";
+        $params = "";
         $values = $this->headers;
         
         if (empty($data["restaurant_id"]) || !$restaurant_id = filter_var($data["restaurant_id"], FILTER_VALIDATE_INT) ) {
@@ -39,9 +41,19 @@ class Products extends GoomerApi
             )->back();
             return;
         }
+        $category_id = explode('&',$_SERVER['REQUEST_URI']);
+        
+        if (!empty($category_id) && count($category_id) == 2) {
+            $category = explode('=',$category_id[1]);
+            if($category[0] == 'category_id'){
+                $category_id = filter_var($category[1], FILTER_VALIDATE_INT);
+                $where  = " AND category_id=:category_id";
+                $params = "&category_id={$category_id}";
+            }
+        }
 
         //get products
-        $products = (new Product())->find("restaurant_id=:restaurant_id","restaurant_id={$restaurant_id}");
+        $products = (new Product())->find("restaurant_id=:restaurant_id{$where}","restaurant_id={$restaurant_id}{$params}");
         
         if (!$products->count()) {
             $this->call(
@@ -53,8 +65,8 @@ class Products extends GoomerApi
         }
 
         $page = (!empty($values["page"]) ? $values["page"] : 1);
-        $pager = new Pager(url("/{restaurant_id}/products"));
-        $pager->pager($products->count(), 1, $page);
+        $pager = new Pager(url("/restaurants/{restaurant_id}/products"));
+        $pager->pager($products->count(), 10, $page);
 
         $response["results"] = $products->count();
         $response["page"] = $pager->page();

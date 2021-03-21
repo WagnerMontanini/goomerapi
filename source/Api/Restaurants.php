@@ -40,7 +40,7 @@ class Restaurants extends GoomerApi
         }
 
         $page = (!empty($values["page"]) ? $values["page"] : 1);
-        $pager = new Pager(url("/"));
+        $pager = new Pager(url("/restaurants"));
         $pager->pager($restaurants->count(), 10, $page);
 
         $response["results"] = $restaurants->count();

@@ -22,6 +22,8 @@ define("DATA_LAYER_CONFIG", [
  */
 define("CONF_URL_BASE", "https://www.goomerapi.com.br");
 define("CONF_URL_TEST", "http://goomerapi.test");
+define("CONF_VERSAO_BASE", "v1");
+define("CONF_VERSAO_TEST", "v1");
 
 
 /**

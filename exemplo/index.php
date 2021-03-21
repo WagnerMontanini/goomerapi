@@ -19,25 +19,25 @@ $route->namespace("WagnerMontanini\GoomerApi\Api");
 
 //restaurants
 $route->group("/v1");
-$route->get("/", "Restaurants:index");
-$route->post("/", "Restaurants:create");
-$route->get("/{restaurant_id}", "Restaurants:read");
-$route->put("/{restaurant_id}", "Restaurants:update");
-$route->delete("/{restaurant_id}", "Restaurants:delete");
+$route->get("/restaurants", "Restaurants:index");
+$route->post("/restaurants", "Restaurants:create");
+$route->get("/restaurants/{restaurant_id}", "Restaurants:read");
+$route->put("/restaurants/{restaurant_id}", "Restaurants:update");
+$route->delete("/restaurants/{restaurant_id}", "Restaurants:delete");
 
 //categories
-$route->get("/{restaurant_id}/categories", "ProductsCategories:index");
-$route->post("/{restaurant_id}/categories", "ProductsCategories:create");
-$route->get("/{restaurant_id}/categories/{product_category_id}", "ProductsCategories:read");
-$route->put("/{restaurant_id}/categories/{product_category_id}", "ProductsCategories:update");
-$route->delete("/{restaurant_id}/categories/{product_category_id}", "ProductsCategories:delete");
+$route->get("/restaurants/{restaurant_id}/categories", "ProductsCategories:index");
+$route->post("/restaurants/{restaurant_id}/categories", "ProductsCategories:create");
+$route->get("/restaurants/{restaurant_id}/categories/{product_category_id}", "ProductsCategories:read");
+$route->put("/restaurants/{restaurant_id}/categories/{product_category_id}", "ProductsCategories:update");
+$route->delete("/restaurants/{restaurant_id}/categories/{product_category_id}", "ProductsCategories:delete");
 
 //products
-$route->get("/{restaurant_id}/products", "Products:index");
-$route->post("/{restaurant_id}/products", "Products:create");
-$route->get("/{restaurant_id}/products/{product_id}", "Products:read");
-$route->put("/{restaurant_id}/products/{product_id}", "Products:update");
-$route->delete("/{restaurant_id}/products/{product_id}", "Products:delete");
+$route->get("/restaurants/{restaurant_id}/products", "Products:index");
+$route->post("/restaurants/{restaurant_id}/products", "Products:create");
+$route->get("/restaurants/{restaurant_id}/products/{product_id}", "Products:read");
+$route->put("/restaurants/{restaurant_id}/products/{product_id}", "Products:update");
+$route->delete("/restaurants/{restaurant_id}/products/{product_id}", "Products:delete");
 
 
 /**

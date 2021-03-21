@@ -14,16 +14,16 @@ function url(string $path = null): string
 {
     if ($_SERVER['HTTP_HOST'] === "goomerapi.test") {
         if ($path) {
-            return CONF_URL_TEST . "/" . ($path[0] == "/" ? mb_substr($path, 1) : $path);
+            return CONF_URL_TEST . "/" . CONF_VERSAO_TEST . "/" . ($path[0] == "/" ? mb_substr($path, 1) : $path);
         }
-        return CONF_URL_TEST;
+        return CONF_URL_TEST . "/" . CONF_VERSAO_TEST;
     }
 
     if ($path) {
-        return CONF_URL_BASE . "/" . ($path[0] == "/" ? mb_substr($path, 1) : $path);
+        return CONF_URL_BASE . "/" . CONF_VERSAO_BASE . "/" . ($path[0] == "/" ? mb_substr($path, 1) : $path);
     }
 
-    return CONF_URL_BASE;
+    return CONF_URL_BASE . "/" . CONF_VERSAO_BASE;
 }
 
 /**

@@ -52,8 +52,8 @@ class ProductsCategories extends GoomerApi
         }
         
         $page = (!empty($values["page"]) ? $values["page"] : 1);
-        $pager = new Pager(url("/{restaurant_id}/categories"));
-        $pager->pager($products_categories->count(), 2, $page);
+        $pager = new Pager(url("/restaurants/{restaurant_id}/categories"));
+        $pager->pager($products_categories->count(), 10, $page);
 
         $response["results"] = $products_categories->count();
         $response["page"] = $pager->page();
