@@ -21,13 +21,14 @@
 							}
 						],
 						"url": {
-							"raw": "https://{{url}}/{{versão}}",
+							"raw": "https://{{url}}/{{versão}}/restaurants",
 							"protocol": "https",
 							"host": [
 								"{{url}}"
 							],
 							"path": [
-								"{{versão}}"
+								"{{versão}}",
+								"restaurants"
 							]
 						}
 					},
@@ -44,13 +45,14 @@
 									}
 								],
 								"url": {
-									"raw": "https://{{url}}/{{versão}}",
+									"raw": "https://{{url}}/{{versão}}/restaurants",
 									"protocol": "https",
 									"host": [
 										"{{url}}"
 									],
 									"path": [
-										"{{versão}}"
+										"{{versão}}",
+										"restaurants"
 									]
 								}
 							},
@@ -107,20 +109,21 @@
 								},
 								{
 									"key": "schedule_data",
-									"value": "{\"wednesday\":[{\"open\" :\"21:20\",\"close\" :\"23:48\"}]}",
+									"value": "{\"monday\":[{\"open\" :\"10:00\",\"close\" :\"14:00\"},{\"open\" :\"17:00\",\"close\" :\"23:59\"}],\"tuesday\":[{\"open\" :\"10:00\",\"close\" :\"14:00\"},{\"open\" :\"17:00\",\"close\" :\"23:59\"}],\"wednesday\":[{\"open\" :\"10:00\",\"close\" :\"23:59\"}],\"thursday\":[{\"open\" :\"10:00\",\"close\" :\"14:00\"},{\"open\" :\"17:00\",\"close\" :\"23:59\"}],\"friday\":[{\"open\" :\"10:00\",\"close\" :\"13:30\"},{\"open\" :\"18:00\",\"close\" :\"22:30\"}],\"saturday\":[{\"open\" :\"11:00\",\"close\" :\"16:00\"}],\"sunday\":[{\"open\" :\"10:00\",\"close\" :\"14:00\"}]}",
 									"description": "Horários de Funcionamento",
 									"type": "text"
 								}
 							]
 						},
 						"url": {
-							"raw": "https://{{url}}/{{versão}}",
+							"raw": "https://{{url}}/{{versão}}/restaurants",
 							"protocol": "https",
 							"host": [
 								"{{url}}"
 							],
 							"path": [
-								"{{versão}}"
+								"{{versão}}",
+								"restaurants"
 							]
 						}
 					},
@@ -171,7 +174,7 @@
 										},
 										{
 											"key": "schedule_data",
-											"value": "{\"wednesday\":[{\"open\" :\"21:20\",\"close\" :\"23:48\"}]}",
+											"value": "{\"monday\":[{\"open\" :\"10:00\",\"close\" :\"14:00\"},{\"open\" :\"17:00\",\"close\" :\"23:59\"}],\"tuesday\":[{\"open\" :\"10:00\",\"close\" :\"14:00\"},{\"open\" :\"17:00\",\"close\" :\"23:59\"}],\"wednesday\":[{\"open\" :\"10:00\",\"close\" :\"23:59\"}],\"thursday\":[{\"open\" :\"10:00\",\"close\" :\"14:00\"},{\"open\" :\"17:00\",\"close\" :\"23:59\"}],\"friday\":[{\"open\" :\"10:00\",\"close\" :\"13:30\"},{\"open\" :\"18:00\",\"close\" :\"22:30\"}],\"saturday\":[{\"open\" :\"11:00\",\"close\" :\"16:00\"}],\"sunday\":[{\"open\" :\"10:00\",\"close\" :\"14:00\"}]}",
 											"description": "Horários de Funcionamento",
 											"type": "text"
 										}
@@ -183,13 +186,14 @@
 									}
 								},
 								"url": {
-									"raw": "https://{{url}}/{{versão}}",
+									"raw": "https://{{url}}/{{versão}}/restaurants",
 									"protocol": "https",
 									"host": [
 										"{{url}}"
 									],
 									"path": [
-										"{{versão}}"
+										"{{versão}}",
+										"restaurants"
 									]
 								}
 							},
@@ -206,13 +210,14 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "https://{{url}}/{{versão}}/{{restaurant_id}}",
+							"raw": "https://{{url}}/{{versão}}/restaurants/{{restaurant_id}}",
 							"protocol": "https",
 							"host": [
 								"{{url}}"
 							],
 							"path": [
 								"{{versão}}",
+								"restaurants",
 								"{{restaurant_id}}"
 							]
 						}
@@ -224,13 +229,14 @@
 								"method": "GET",
 								"header": [],
 								"url": {
-									"raw": "https://{{url}}/{{versão}}/{{restaurant_id}}",
+									"raw": "https://{{url}}/{{versão}}/restaurants/{{restaurant_id}}",
 									"protocol": "https",
 									"host": [
 										"{{url}}"
 									],
 									"path": [
 										"{{versão}}",
+										"restaurants",
 										"{{restaurant_id}}"
 									]
 								}
@@ -295,13 +301,14 @@
 							]
 						},
 						"url": {
-							"raw": "https://{{url}}/{{versão}}/{{restaurant_id}}",
+							"raw": "https://{{url}}/{{versão}}/restaurants/{{restaurant_id}}",
 							"protocol": "https",
 							"host": [
 								"{{url}}"
 							],
 							"path": [
 								"{{versão}}",
+								"restaurants",
 								"{{restaurant_id}}"
 							]
 						}
@@ -365,13 +372,14 @@
 									}
 								},
 								"url": {
-									"raw": "https://{{url}}/{{versão}}/{{restaurant_id}}",
+									"raw": "https://{{url}}/{{versão}}/restaurants/{{restaurant_id}}",
 									"protocol": "https",
 									"host": [
 										"{{url}}"
 									],
 									"path": [
 										"{{versão}}",
+										"restaurants",
 										"{{restaurant_id}}"
 									]
 								}
@@ -389,13 +397,14 @@
 						"method": "DELETE",
 						"header": [],
 						"url": {
-							"raw": "https://{{url}}/{{versão}}/{{restaurant_id}}",
+							"raw": "https://{{url}}/{{versão}}/restaurants/{{restaurant_id}}",
 							"protocol": "https",
 							"host": [
 								"{{url}}"
 							],
 							"path": [
 								"{{versão}}",
+								"restaurants",
 								"{{restaurant_id}}"
 							]
 						}
@@ -407,13 +416,14 @@
 								"method": "DELETE",
 								"header": [],
 								"url": {
-									"raw": "https://{{url}}/{{versão}}/{{restaurant_id}}",
+									"raw": "https://{{url}}/{{versão}}/restaurants/{{restaurant_id}}",
 									"protocol": "https",
 									"host": [
 										"{{url}}"
 									],
 									"path": [
 										"{{versão}}",
+										"restaurants",
 										"{{restaurant_id}}"
 									]
 								}
@@ -443,13 +453,14 @@
 							}
 						],
 						"url": {
-							"raw": "https://{{url}}/{{versão}}/{{restaurant_id}}/products",
+							"raw": "https://{{url}}/{{versão}}/restaurants/{{restaurant_id}}/products",
 							"protocol": "https",
 							"host": [
 								"{{url}}"
 							],
 							"path": [
 								"{{versão}}",
+								"restaurants",
 								"{{restaurant_id}}",
 								"products"
 							]
@@ -468,13 +479,14 @@
 									}
 								],
 								"url": {
-									"raw": "https://{{url}}/{{versão}}/{{restaurant_id}}/products",
+									"raw": "https://{{url}}/{{versão}}/restaurants/{{restaurant_id}}/products",
 									"protocol": "https",
 									"host": [
 										"{{url}}"
 									],
 									"path": [
 										"{{versão}}",
+										"restaurants",
 										"{{restaurant_id}}",
 										"products"
 									]
@@ -534,13 +546,14 @@
 							]
 						},
 						"url": {
-							"raw": "https://{{url}}/{{versão}}/{{restaurant_id}}/products",
+							"raw": "https://{{url}}/{{versão}}/restaurants/{{restaurant_id}}/products",
 							"protocol": "https",
 							"host": [
 								"{{url}}"
 							],
 							"path": [
 								"{{versão}}",
+								"restaurants",
 								"{{restaurant_id}}",
 								"products"
 							]
@@ -594,13 +607,14 @@
 									]
 								},
 								"url": {
-									"raw": "https://{{url}}/{{versão}}/{{restaurant_id}}/",
+									"raw": "https://{{url}}/{{versão}}/restaurants/{{restaurant_id}}/",
 									"protocol": "https",
 									"host": [
 										"{{url}}"
 									],
 									"path": [
 										"{{versão}}",
+										"restaurants",
 										"{{restaurant_id}}",
 										""
 									]
@@ -619,13 +633,14 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "https://{{url}}/{{versão}}/{{restaurant_id}}/products/{{product_id}}",
+							"raw": "https://{{url}}/{{versão}}/restaurants/{{restaurant_id}}/products/{{product_id}}",
 							"protocol": "https",
 							"host": [
 								"{{url}}"
 							],
 							"path": [
 								"{{versão}}",
+								"restaurants",
 								"{{restaurant_id}}",
 								"products",
 								"{{product_id}}"
@@ -639,13 +654,14 @@
 								"method": "GET",
 								"header": [],
 								"url": {
-									"raw": "https://{{url}}/{{versão}}/{{restaurant_id}}/products/{{product_id}}",
+									"raw": "https://{{url}}/{{versão}}/restaurants/{{restaurant_id}}/products/{{product_id}}",
 									"protocol": "https",
 									"host": [
 										"{{url}}"
 									],
 									"path": [
 										"{{versão}}",
+										"restaurants",
 										"{{restaurant_id}}",
 										"products",
 										"{{product_id}}"
@@ -706,13 +722,14 @@
 							]
 						},
 						"url": {
-							"raw": "https://{{url}}/{{versão}}/{{restaurant_id}}/products/{{product_id}}",
+							"raw": "https://{{url}}/{{versão}}/restaurants/{{restaurant_id}}/products/{{product_id}}",
 							"protocol": "https",
 							"host": [
 								"{{url}}"
 							],
 							"path": [
 								"{{versão}}",
+								"restaurants",
 								"{{restaurant_id}}",
 								"products",
 								"{{product_id}}"
@@ -767,13 +784,14 @@
 									]
 								},
 								"url": {
-									"raw": "https://{{url}}/{{versão}}/{{restaurant_id}}/products/{{product_id}}",
+									"raw": "https://{{url}}/{{versão}}/restaurants/{{restaurant_id}}/products/{{product_id}}",
 									"protocol": "https",
 									"host": [
 										"{{url}}"
 									],
 									"path": [
 										"{{versão}}",
+										"restaurants",
 										"{{restaurant_id}}",
 										"products",
 										"{{product_id}}"
@@ -793,13 +811,14 @@
 						"method": "DELETE",
 						"header": [],
 						"url": {
-							"raw": "https://{{url}}/{{versão}}/{{restaurant_id}}/products/{{product_id}}",
+							"raw": "https://{{url}}/{{versão}}/restaurants/{{restaurant_id}}/products/{{product_id}}",
 							"protocol": "https",
 							"host": [
 								"{{url}}"
 							],
 							"path": [
 								"{{versão}}",
+								"restaurants",
 								"{{restaurant_id}}",
 								"products",
 								"{{product_id}}"
@@ -813,13 +832,14 @@
 								"method": "DELETE",
 								"header": [],
 								"url": {
-									"raw": "https://{{url}}/{{versão}}/{{restaurant_id}}/products/{{product_id}}",
+									"raw": "https://{{url}}/{{versão}}/restaurants/{{restaurant_id}}/products/{{product_id}}",
 									"protocol": "https",
 									"host": [
 										"{{url}}"
 									],
 									"path": [
 										"{{versão}}",
+										"restaurants",
 										"{{restaurant_id}}",
 										"products",
 										"{{product_id}}"
@@ -856,13 +876,14 @@
 							}
 						],
 						"url": {
-							"raw": "https://{{url}}/{{versão}}/{{restaurant_id}}/categories",
+							"raw": "https://{{url}}/{{versão}}/restaurants/{{restaurant_id}}/categories",
 							"protocol": "https",
 							"host": [
 								"{{url}}"
 							],
 							"path": [
 								"{{versão}}",
+								"restaurants",
 								"{{restaurant_id}}",
 								"categories"
 							]
@@ -881,13 +902,14 @@
 									}
 								],
 								"url": {
-									"raw": "https://{{url}}/{{versão}}/{{restaurant_id}}/categories",
+									"raw": "https://{{url}}/{{versão}}/restaurants/{{restaurant_id}}/categories",
 									"protocol": "https",
 									"host": [
 										"{{url}}"
 									],
 									"path": [
 										"{{versão}}",
+										"restaurants",
 										"{{restaurant_id}}",
 										"categories"
 									]
@@ -917,13 +939,14 @@
 							]
 						},
 						"url": {
-							"raw": "https://{{url}}/{{versão}}/{{restaurant_id}}/categories",
+							"raw": "https://{{url}}/{{versão}}/restaurants/{{restaurant_id}}/categories",
 							"protocol": "https",
 							"host": [
 								"{{url}}"
 							],
 							"path": [
 								"{{versão}}",
+								"restaurants",
 								"{{restaurant_id}}",
 								"categories"
 							]
@@ -947,13 +970,14 @@
 									]
 								},
 								"url": {
-									"raw": "https://{{url}}/{{versão}}/{{restaurant_id}}/categories",
+									"raw": "https://{{url}}/{{versão}}/restaurants/{{restaurant_id}}/categories",
 									"protocol": "https",
 									"host": [
 										"{{url}}"
 									],
 									"path": [
 										"{{versão}}",
+										"restaurants",
 										"{{restaurant_id}}",
 										"categories"
 									]
@@ -972,13 +996,14 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "https://{{url}}/{{versão}}/{{restaurant_id}}/categories/{{category_id}}",
+							"raw": "https://{{url}}/{{versão}}/restaurants/{{restaurant_id}}/categories/{{category_id}}",
 							"protocol": "https",
 							"host": [
 								"{{url}}"
 							],
 							"path": [
 								"{{versão}}",
+								"restaurants",
 								"{{restaurant_id}}",
 								"categories",
 								"{{category_id}}"
@@ -992,13 +1017,14 @@
 								"method": "GET",
 								"header": [],
 								"url": {
-									"raw": "https://{{url}}/{{versão}}/{{restaurant_id}}/categories/{{category_id}}",
+									"raw": "https://{{url}}/{{versão}}/restaurants/{{restaurant_id}}/categories/{{category_id}}",
 									"protocol": "https",
 									"host": [
 										"{{url}}"
 									],
 									"path": [
 										"{{versão}}",
+										"restaurants",
 										"{{restaurant_id}}",
 										"categories",
 										"{{category_id}}"
@@ -1029,13 +1055,14 @@
 							]
 						},
 						"url": {
-							"raw": "https://{{url}}/{{versão}}/{{restaurant_id}}/categories/{{category_id}}",
+							"raw": "https://{{url}}/{{versão}}/restaurants/{{restaurant_id}}/categories/{{category_id}}",
 							"protocol": "https",
 							"host": [
 								"{{url}}"
 							],
 							"path": [
 								"{{versão}}",
+								"restaurants",
 								"{{restaurant_id}}",
 								"categories",
 								"{{category_id}}"
@@ -1060,13 +1087,14 @@
 									]
 								},
 								"url": {
-									"raw": "https://{{url}}/{{versão}}/{{restaurant_id}}/categories/{{category_id}}",
+									"raw": "https://{{url}}/{{versão}}/restaurants/{{restaurant_id}}/categories/{{category_id}}",
 									"protocol": "https",
 									"host": [
 										"{{url}}"
 									],
 									"path": [
 										"{{versão}}",
+										"restaurants",
 										"{{restaurant_id}}",
 										"categories",
 										"{{category_id}}"
@@ -1086,13 +1114,14 @@
 						"method": "DELETE",
 						"header": [],
 						"url": {
-							"raw": "https://{{url}}/{{versão}}/{{restaurant_id}}/categories/{{category_id}}",
+							"raw": "https://{{url}}/{{versão}}/restaurants/{{restaurant_id}}/categories/{{category_id}}",
 							"protocol": "https",
 							"host": [
 								"{{url}}"
 							],
 							"path": [
 								"{{versão}}",
+								"restaurants",
 								"{{restaurant_id}}",
 								"categories",
 								"{{category_id}}"
@@ -1106,13 +1135,14 @@
 								"method": "DELETE",
 								"header": [],
 								"url": {
-									"raw": "https://{{url}}/{{versão}}/{{restaurant_id}}/categories/{{category_id}}",
+									"raw": "https://{{url}}/{{versão}}/restaurants/{{restaurant_id}}/categories/{{category_id}}",
 									"protocol": "https",
 									"host": [
 										"{{url}}"
 									],
 									"path": [
 										"{{versão}}",
+										"restaurants",
 										"{{restaurant_id}}",
 										"categories",
 										"{{category_id}}"
