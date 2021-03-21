@@ -3,7 +3,7 @@
 $curl = curl_init();
 
 curl_setopt_array($curl, array(
-  CURLOPT_URL => 'https://goomerapi.test/exemplo/v1/1/categories/1',
+  CURLOPT_URL => 'https://goomerapi.test/v1/restaurants/1/categories/1',
   CURLOPT_RETURNTRANSFER => true,
   CURLOPT_ENCODING => '',
   CURLOPT_MAXREDIRS => 10,

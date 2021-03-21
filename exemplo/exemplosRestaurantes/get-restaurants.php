@@ -3,7 +3,7 @@
 $curl = curl_init();
  
 curl_setopt_array($curl, array(
-  CURLOPT_URL => 'https://localhost/v1',
+  CURLOPT_URL => 'https://localhost/v1/restaurants',
   CURLOPT_RETURNTRANSFER => true,
   CURLOPT_ENCODING => '',
   CURLOPT_MAXREDIRS => 10,
